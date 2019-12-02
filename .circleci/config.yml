@@ -51,11 +51,10 @@ jobs:
     working_directory: ~/deploy-doc-server
     steps:
       - attach_workspace:
-          at: /tmp
-      - run: npx netlify-cli 
+          at: /tmp 
       - run:
           name: Deploy app
-          command: netlify deploy --prod --site=$SITE_ID --auth=$NETLIFY_TOKEN --dir=$SERVER_DOC
+          command:  npx netlify-cli deploy --prod --site=$SITE_ID --auth=$NETLIFY_TOKEN --dir=$SERVER_DOC
   back-test-unit:
     docker:
       - image: circleci/node:dubnium-browsers
