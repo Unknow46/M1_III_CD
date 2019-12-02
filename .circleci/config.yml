@@ -52,9 +52,9 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp
+      - run: npm install netlify-cli -g
       - run:
           name: Deploy app
-          command: npm install netlify-cli -g
           command: netlify deploy --prod --site=$SITE_ID --auth=$NETLIFY_TOKEN --dir=$SERVER_DOC
   back-test-unit:
     docker:
