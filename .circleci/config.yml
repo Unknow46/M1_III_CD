@@ -54,7 +54,7 @@ jobs:
           at: /tmp
       - run:
           name: Deploy app
-          command: echo todo && false
+          command: netlify deploy --prod --site=$SITE_ID --auth=$NETLIFY_TOKEN --dir=$SERVER_DOC
   back-test-unit:
     docker:
       - image: circleci/node:dubnium-browsers
